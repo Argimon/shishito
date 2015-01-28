@@ -213,9 +213,9 @@ class SeleniumTest(object):
         """ Waits until certain element is present and clickable """
         timeout = timeout or self.timeout
         WebDriverWait(self.driver, timeout).until(EC.presence_of_element_located(locator),
-                                                  'Element specified by %s was not present!' % locator)
+                                                  'Element specified by %s was not present!' % (locator,))
         WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(locator),
-                                                  'Element specified by %s did not become clickable!' % locator)
+                                                  'Element specified by %s did not become clickable!' % (locator,))
 
     def find_element(self, locator):
         """ Return the element at the specified locator."""
